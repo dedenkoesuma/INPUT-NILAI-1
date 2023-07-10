@@ -21,6 +21,7 @@
             <div
               class="flex-grow border border-gray-300 rounded text-center py-8"
             >
+            
               <h2 class="text-4xl font-bold pb-2">{{$nilai}}</h2>
               <h4 class="inline text-gray-500 text-sm">Nilai</h4>
             </div>
@@ -29,6 +30,40 @@
       
       <div class="w-full lg:w-5/5">
           <div class="p-2 rounded text-center bg-teal-500 text-white ">
+            Hasil Nilai Per Semester
+          </div>
+          <div class="flex gap-5 mt-2">
+            <div class="flex-grow rounded text-center py-8">
+            <h2 class="text-4xl font-bold pb-2">Matematika</h2>
+         @foreach ($matematika as $semester => $nilai)
+                    <div class="flex-grow border border-gray-300 rounded text-center py-8">
+                        <h2 class="text-4xl font-bold pb-2">{{$nilai}}</h2>
+                        <h4 class="inline text-gray-500 text-sm">Semester {{$semester+1}}</h4>
+                    </div>
+                @endforeach
+              </div>
+              <div class="flex-grow rounded text-center py-8">
+              <h2 class="text-4xl font-bold pb-2">Fisika</h2>
+         @foreach ($kimia as $semester => $nilai)
+                    <div class="flex-grow border border-gray-300 rounded text-center py-8">
+                        <h2 class="text-4xl font-bold pb-2">{{$nilai}}</h2>
+                        <h4 class="inline text-gray-500 text-sm">Semester {{$semester+1}}</h4>
+                    </div>
+                @endforeach
+              </div>
+            <div class="flex-grow rounded text-center py-8">
+            <h2 class="text-4xl font-bold pb-2">Kimia</h2>
+         @foreach ($matematika as $semester => $nilai)
+                    <div class="flex-grow border border-gray-300 rounded text-center py-8">
+                        <h2 class="text-4xl font-bold pb-2">{{$nilai}}</h2>
+                        <h4 class="inline text-gray-500 text-sm">Semester {{$semester+1}}</h4>
+                    </div>
+         @endforeach
+            </div>
+        </div>
+      </div>
+    <div class="w-full lg:w-5/5">
+          <div class="p-2 rounded text-center bg-teal-500 text-white ">
             Hasil Nilai Rata-Rata
           </div>
           <div class="flex gap-5 mt-2">
@@ -36,7 +71,7 @@
               class="flex-grow border border-gray-300 rounded text-center py-8"
             >
               <h2 class="text-4xl font-bold pb-2">{{$averageMtk}}</h2>
-              <h4 class="inline text-gray-500 text-sm">Matematika</h4>
+              <h4 class="inline text-gray-500 text-sm">Rata-Rata Matematika</h4>
             </div>
             <div
               class="flex-grow border border-gray-300 rounded text-center py-8"

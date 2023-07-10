@@ -13,10 +13,10 @@
   
   <div class="tab">
   @for ($i = 0; $i < 8; $i++)
-    <p>Semester {{$i+1}}</p>
-    <p><input type="number" placeholder="Nilai Matematika..." oninput="this.className = ''" name="matematika" ></p>
-    <p><input type="number" placeholder="Nilai Fisika..." oninput="this.className = ''" name="fisika"></p>
-    <p><input type="number" placeholder="Nilai Kimia..." oninput="this.className = ''" name="kimia"></p>
+    <p >Semester {{$i+1}}</p>
+    <p><input type="number" placeholder="Nilai Matematika..." oninput="this.className = ''" name="matematika[]" ></p>
+    <p><input type="number" placeholder="Nilai Fisika..." oninput="this.className = ''" name="fisika[]"></p>
+    <p><input type="number" placeholder="Nilai Kimia..." oninput="this.className = ''" name="kimia[]"></p>
     @endfor
   </div>
   <div style="overflow:auto;">

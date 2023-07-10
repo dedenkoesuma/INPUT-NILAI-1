@@ -21,21 +21,25 @@ class Input extends Controller
             "kimia" => $request->input('kimia')
         ];
         
-        $nilai = [$value["matematika"], $value["fisika"], $value["kimia"]];
-        $mtk = [$value['matematika']];
-        $fisika = [$value['fisika']];
-        $kimia = [$value['kimia']];
+        $averageMatematika = array_sum($value['matematika']) / count($value['matematika']);
+        $averageFisika = array_sum($value['fisika']) / count($value['fisika']);
+        $averageKimia = array_sum($value['kimia']) / count($value['kimia']);
+    
+        // Menghitung rata-rata total nilai
+        $average = ($averageMatematika + $averageFisika + $averageKimia) / 3;
 
         $params = [
             "name" => $value['nama'],
             "class" => $value['kelas'],
-            "average" =>round(array_sum($nilai) / count($nilai)),
+            "average" =>round($average),
             "nilai" => "",
-            "averageMtk" => array_sum($mtk) /count($mtk),
-            "averageFisika" => array_sum($fisika) / count($fisika),
-            "averageKimia" => array_sum($kimia) /count($kimia)
+            "matematika" => $value['matematika'],
+            "fisika" => $value['fisika'],
+            "kimia" => $value['kimia'],
+            "averageMtk" => array_sum($value['matematika']) /count($value['matematika']),
+            "averageFisika" => array_sum($value['fisika']) / count($value['fisika']),
+            "averageKimia" => array_sum($value['kimia']) /count($value['kimia'])
         ];
-        
         
         if ($params["average"] > 90) {
             $params["nilai"] = "Sangat Baik";
@@ -48,6 +52,7 @@ class Input extends Controller
         } else {
             $params["nilai"] = "Nilai Invalid";
         };
+
         return view("save", $params);
     }
 }
